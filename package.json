@@ -4,8 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run compile; node lib/main.js",
+    "compile": "./node_modules/.bin/babel src --out-dir lib"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "core-js": "^3.18.3",
+    "install": "^0.13.0",
+    "npm": "^8.1.0",
+    "xlsx": "^0.17.3"
+  }
 }
