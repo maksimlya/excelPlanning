@@ -12,19 +12,19 @@ export class Calendar {
             let prevWeekDays = day - 1;
             let prevMonthDays = new Date(year, month, 0).getDate();
             while(prevWeekDays >= 0) {
-                weekData[days[prevWeekDays]] = prevMonthDays + '/' + (month - 1);
+                weekData[days[prevWeekDays]] = prevMonthDays + '/' + (month || 12);
                 prevWeekDays--;
                 prevMonthDays--;
             }
             while(day < 7 && i <= numOfDays) {
-                weekData[days[new Date(year, month, i).getDay()]] = i + '/' + month;
+                weekData[days[new Date(year, month, i).getDay()]] = i + '/' + ((month) % 12 + 1);
                 day++;
                 i++;
             }
             let nextWeekDays = day;
             let nextMonthDays = 1;
             while(nextWeekDays < 7) {
-                weekData[days[new Date(year,((month + 1)),nextMonthDays).getDay()]] = nextMonthDays++ + '/' + ((month + 1) % 12);
+                weekData[days[new Date(year,((month + 1)),nextMonthDays).getDay()]] = nextMonthDays++ + '/' + ((month + 1) % 12 + 1);
                 nextWeekDays++;
             }
           

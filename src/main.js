@@ -23,7 +23,7 @@ const data = [{
     lastName: 'Lee'
    }]
 
-   const cal = new Calendar(0,2022);
+   const cal = new Calendar(11,2022);
 
    console.log(cal.getData());
 
